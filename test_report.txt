@@ -1,0 +1,65 @@
+---------------------------Static Analysis---------------------------
+External Library Calling(ELC): github.com/emp-toolkit/jialanli/lacia/utils
+External Library Calling(ELC): github.com/hyperledger/fabric/core/chaincode/shim
+External Library Calling(ELC): github.com/hyperledger/fabric/protos/peer
+Incorrect use(WS): net/http
+Incorrect use(EFA): os
+Incorrect use(SCE): os/exec
+Declaration of variables is not recommended in a structure(FD): FoodID
+Declaration of variables is not recommended in a structure(FD): FoodProInfo
+Declaration of variables is not recommended in a structure(FD): FoodName
+Declaration of variables is not recommended in a structure(FD): FoodSpec
+Declaration of variables is not recommended in a structure(FD): FoodMFGDate
+Declaration of variables is not recommended in a structure(FD): FoodEXPDate
+Declaration of variables is not recommended in a structure(FD): FoodLOT
+Declaration of variables is not recommended in a structure(FD): FoodQSID
+Declaration of variables is not recommended in a structure(FD): FoodMFRSName
+Declaration of variables is not recommended in a structure(FD): FoodProPrice
+Declaration of variables is not recommended in a structure(FD): FoodProPlace
+Declaration of variables is not recommended in a structure(FD): test
+Declaration of variables is not recommended in a structure(FD): testA
+Declaration of variables is not recommended in a structure(FD): testB
+CP: goroutine is not recommended because of its vulnerability to program concurrency
+Read your write(RYW): key
+CCCI: Using InvokeChaincode to call a channel chaincode that may pose a privacy data security risk
+Map structure iteration(MSI): [UnInitMap]
+CP: channel is not recommended because of its vulnerability to program concurrency
+Built-in functions are not recommended(UBF): close
+Unhandled errors(UE)：	go stub.PutState("key", []byte("1"))
+Unhandled errors(UE)：	stub.GetState("key")
+Unhandled errors(UE)：	defer response.Body.Close()
+Unencrypted sensitive data(USD): crypto is not used
+Uninitialized storage pointer(USP): UnInitStr
+Uninitialized storage pointer(USP): err
+Uninitialized storage pointer(USP): FoodInfos
+Uninitialized storage pointer(USP): UnInitMap
+Uninitialized storage pointer(USP): UnInitArr
+Using Inherited Functions and Variables(UIFV): The TestC structure inherits TestA and TestB at the same time, and the superclass has the same function or variable Set{FuncTest, test} 
+---------------------------Dynamic Analysis---------------------------
+UIA: GetProInfo function does not check the input arguments
+Comment headers insufficient for checking implementation and usage(CHICIU): Invoke function without a comment description
+Comment headers insufficient for checking implementation and usage(CHICIU): AddProInfo function without a comment description
+Comment headers insufficient for checking implementation and usage(CHICIU): GetProInfo function without a comment description
+Comment headers insufficient for checking implementation and usage(CHICIU): MutiClose function without a comment description
+IL
+---------------------------Test Result---------------------------
+Static cost: 6.457880372s,Dynamic cost: 10.418109494s,Total cost: 16.875989866s
+UBF(1)
+FD(14)
+UIFV(1)
+CP(2)
+MSI(1)
+USP(5)
+RYW(1)
+CCCI(1)
+SCE(1)
+ELC(3)
+WS(1)
+EFA(1)
+UE(3)
+USD(1)
+UIA(1)
+CHICIU(4)
+IL(1)
+17 types,42 vulnerabilities
+
